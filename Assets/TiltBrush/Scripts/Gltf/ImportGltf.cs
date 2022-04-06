@@ -19,7 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using Newtonsoft.Json;
+using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
 
 using Debug = UnityEngine.Debug;

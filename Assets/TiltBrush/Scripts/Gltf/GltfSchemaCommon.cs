@@ -15,8 +15,8 @@
 using System;
 using System.Collections.Generic;
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using Unity.Plastic.Newtonsoft.Json;
+using Unity.Plastic.Newtonsoft.Json.Serialization;
 using UnityEngine;
 
 namespace TiltBrushToolkit {
