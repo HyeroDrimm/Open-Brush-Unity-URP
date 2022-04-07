@@ -5,6 +5,9 @@
     "m_Properties": [
         {
             "m_Id": "aa3db20bda8c4974a5e559864fa9eba8"
+        },
+        {
+            "m_Id": "bc3bd79108424ebf8f3be90253f66d43"
         }
     ],
     "m_Keywords": [],
@@ -44,6 +47,9 @@
         },
         {
             "m_Id": "c3bb60e85c7140eaad81a1d147b44691"
+        },
+        {
+            "m_Id": "ccd6c450ec0242fead66e0f3dfabf0b9"
         }
     ],
     "m_GroupDatas": [],
@@ -89,6 +95,20 @@
                     "m_Id": "b82e808c561a480886cf91e5d23f77b4"
                 },
                 "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "ccd6c450ec0242fead66e0f3dfabf0b9"
+                },
+                "m_SlotId": 1
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "e1217097aaf54f2abc45d03e2634f4da"
+                },
+                "m_SlotId": 0
             }
         }
     ],
@@ -836,6 +856,29 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
+    "m_ObjectId": "bc3bd79108424ebf8f3be90253f66d43",
+    "m_Guid": {
+        "m_GuidSerialized": "07b62bef-19d4-4b4f-bf39-640494ec064a"
+    },
+    "m_Name": "nor",
+    "m_DefaultReferenceName": "Texture2D_bc3bd79108424ebf8f3be90253f66d43",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_Guid": ""
+    },
+    "m_Modifiable": true,
+    "m_DefaultType": 3
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.VertexColorNode",
     "m_ObjectId": "c3bb60e85c7140eaad81a1d147b44691",
     "m_Group": {
@@ -864,6 +907,64 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
+    "m_ObjectId": "ccd6c450ec0242fead66e0f3dfabf0b9",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "DoubleSidedNormalNoInput",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -446.00006103515627,
+            "y": 371.0,
+            "width": 203.0,
+            "height": 94.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "dacce771c73d4af1ad38037c7c30cad2"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": false,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedSubGraph": "{\n    \"subGraph\": {\n        \"fileID\": -5475051401550479605,\n        \"guid\": \"ed754170a629c574db1b7ad41c4ef7c9\",\n        \"type\": 3\n    }\n}",
+    "m_PropertyGuids": [],
+    "m_PropertyIds": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "dacce771c73d4af1ad38037c7c30cad2",
+    "m_Id": 1,
+    "m_DisplayName": "Out_Vector3",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "OutVector3",
+    "m_StageCapability": 2,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
 }
 
 {
