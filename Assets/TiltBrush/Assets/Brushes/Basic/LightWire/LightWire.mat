@@ -4,15 +4,16 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: LightWire
-  m_Shader: {fileID: 4800000, guid: 3b4cc34a39a839049b4387ce42e3b56c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 8a17c59d25b40ea45946005c1d21a0b4, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -30,6 +31,18 @@ Material:
         m_Texture: {fileID: 2800000, guid: ea466d6b6f5981a418210cf0db7aee16, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutoff: 0.5
     - _EmissionGain: 0.5
@@ -40,3 +53,4 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.3455882, g: 0.3455882, b: 0.3455882, a: 0}
     - _TintColor: {r: 0.5441177, g: 0.16886412, b: 0, a: 0.5019608}
+  m_BuildTextureStacks: []

@@ -1,3 +1,7 @@
+#pragma once
+#ifndef BRUSH_URP
+#define BRUSH_URP
+
 // Copyright 2017 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,7 +15,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 
 // -*- c -*-
 
@@ -183,3 +186,4 @@ void NativeToSrgb_float(float4 color, out float4 OUT)
 // TBT is in meters, TB is in decimeters.
 #define kDecimetersToWorldUnits 0.1
 
+#endif
