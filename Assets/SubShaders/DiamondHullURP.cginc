@@ -1,3 +1,5 @@
+#include "BrushURP.cginc"
+
 // Amplitude reflection coefficient (s-polarized)
 float rs(float n1, float n2, float cosI, float cosT)
 {
@@ -81,7 +83,7 @@ float thinFilmReflectance(float cos0, float lambda, float thickness, float n0, f
     return 1 - t;
 }
 
-void GetDiffraction_float(float3 thickTex, float3 I, float3 N, out float3 _return)
+float3 GetDiffraction(float3 thickTex, float3 I, float3 N)
 {
     const float thicknessMin = 250;
     const float thicknessMax = 400;
@@ -99,5 +101,28 @@ void GetDiffraction_float(float3 thickTex, float3 I, float3 N, out float3 _retur
     const float green = thinFilmReflectance(cos0, 510, thick, nmedium, nfilm, ninternal);
     const float blue = thinFilmReflectance(cos0, 475, thick, nmedium, nfilm, ninternal);
 
-    _return = float3(red, green, blue);
+    return float3(red, green, blue);
+}
+
+void Frag_float(UnityTexture2D mainTex, float3 viewDirection, float3 worldNormal, float3 normalVector, float3 worldPos, float4 INcolor, out float3 Albedo, out float3 Specular, out float Smoothness, out float3 Emission)
+{
+    Smoothness = .8;
+    Albedo = INcolor * .2;
+    
+        // Calculate rim
+    half rim = 1.0 - abs(dot(normalize(viewDirection), worldNormal));
+    rim *= 1 - pow(rim, 5);
+        
+    const float3 I = (_WorldSpaceCameraPos - worldPos);
+    rim = lerp(rim, 150,
+              1 - saturate(abs(dot(normalize(I), worldNormal)) / .1));
+
+    float3 diffraction = tex2D(mainTex, half2(rim + _Time.x * .3 + normalVector.x, rim + normalVector.y)).xyz;
+    diffraction = GetDiffraction(diffraction, normalVector, normalize(viewDirection));
+
+    Emission = rim * INcolor.xyz * diffraction * .5 + rim * diffraction * .25;
+    
+    float4 nativeINcolor;
+    SrgbToNative_float(INcolor, nativeINcolor);
+    Specular = nativeINcolor.xyz * clamp(diffraction, .0, 1);
 }

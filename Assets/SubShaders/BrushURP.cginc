@@ -155,32 +155,30 @@ void TbVertToLinear_float(float4 color, out float4 OUT)
 // Conversions to and from native colorspace.
 // Note that SrgbToLinear_Large only converts to linear in the 0:1 range
 // because Linear HDR values don't work with the Tilt Brush bloom filter
-void SrgbToNativeLinear_float(float4 color, out float4 OUT)
-{
-    SrgbToLinear_Large_float(color, OUT);
-}
-void TbVertToNativeLinear_float(float4 color, out float4 OUT)
-{
-    TbVertToLinear_float(color, OUT);
-}
-void NativeToSrgbLinear_float(float4 color, out float4 OUT)
-{
-    LinearToSrgb_float(color, OUT);
-}
-
-
 
 void SrgbToNative_float(float4 color, out float4 OUT)
 {
+#ifdef TBT_LINEAR_TARGET
     OUT = color;
+#else
+    SrgbToLinear_Large_float(color, OUT);
+#endif
 }
 void TbVertToNative_float(float4 color, out float4 OUT)
 {
+#ifdef TBT_LINEAR_TARGET
     TbVertToSrgb_float(color, OUT);
+#else
+    TbVertToLinear_float(color, OUT);
+#endif
 }
 void NativeToSrgb_float(float4 color, out float4 OUT)
 {
+#ifdef TBT_LINEAR_TARGET
     OUT = color;
+#else
+    LinearToSrgb_float(color, OUT);
+#endif
 }
 
 // TBT is in meters, TB is in decimeters.
